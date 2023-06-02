@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import com.example.erkinbekovbilimmonth_5_dz_2.R
 import com.example.erkinbekovbilimmonth_5_dz_2.data.local.Pref
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.FragmentLoveCalculatorBinding
+import com.example.erkinbekovbilimmonth_5_dz_2.model.LoveModel
 import com.example.erkinbekovbilimmonth_5_dz_2.viewModel.LoveViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -48,14 +49,13 @@ class LoveCalculatorFragment  : Fragment() {
         binding.apply {
             btnCalculate.setOnClickListener {
                 viewModel.liveLove(firstNameEd.text.toString(), secondNameEd.text.toString())
-                    .observe(viewLifecycleOwner,Observer {
+                    .observe(viewLifecycleOwner,Observer {LoveModel ->
                         findNavController().navigate(
                             R.id.loveScoreFragment,
                             bundleOf(
-                                KEY_FOR_FNAME to it.firstName,
-                                KEY_FOR_SNAME to it.secondName,
-                                KEY_FOR_PERCE to it.percentage,
-                                KEY_FOR_RESULT to it.result
+                                KEY_FOR_FNAME to LoveModel.firstName,
+                                KEY_FOR_SNAME to LoveModel.secondName,
+                                KEY_FOR_PERCE to LoveModel.percentage,
                             )
                         )
                     })
@@ -68,6 +68,5 @@ class LoveCalculatorFragment  : Fragment() {
         const val KEY_FOR_FNAME = "firstName"
         const val KEY_FOR_SNAME = "secondName"
         const val KEY_FOR_PERCE = "123%"
-        const val KEY_FOR_RESULT = "result"
     }
 }
