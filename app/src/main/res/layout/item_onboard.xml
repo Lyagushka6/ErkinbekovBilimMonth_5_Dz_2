@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/img_love"
+        android:src="@drawable/ic_heart"
+        android:scaleType="centerCrop"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+
+    <TextView
+        android:id="@+id/tv_love"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/who"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_loveInfo"
+        android:paddingHorizontal="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_started"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/black"
+        android:textAllCaps="false"
+        android:visibility="gone"/>
+
+
+
+</LinearLayout>

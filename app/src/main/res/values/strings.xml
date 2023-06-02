@@ -11,4 +11,9 @@
     <string name="your_score">Your Score</string>
     <string name="score_tv">score</string>
     <string name="try_again">Try Again</string>
+    <string name="get_started">Get Started</string>
+    <string name="title">title</string>
+    <string name="desc">desc</string>
+    <string name="info">info</string>
+    <string name="who">who</string>
 </resources>

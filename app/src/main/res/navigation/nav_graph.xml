@@ -15,4 +15,10 @@
         android:name="com.example.erkinbekovbilimmonth_5_dz_2.ui.score.LoveScoreFragment"
         android:label="fragment_love_score"
         tools:layout="@layout/fragment_love_score" />
+    <fragment
+        android:id="@+id/onBoardFragment"
+        android:name="com.example.erkinbekovbilimmonth_5_dz_2.ui.onBoard.OnBoardFragment"
+        android:label="fragment_on_board"
+        tools:layout="@layout/fragment_on_board" />
+
 </navigation>
