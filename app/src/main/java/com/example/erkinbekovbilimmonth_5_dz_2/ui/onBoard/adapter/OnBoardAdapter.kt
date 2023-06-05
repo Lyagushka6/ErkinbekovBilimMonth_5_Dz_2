@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
 import coil.load
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.ItemOnboardBinding
 import com.example.erkinbekovbilimmonth_5_dz_2.model.OnBoard
 
-class OnBoardAdapter(private val onClick:() -> Unit): RecyclerView.Adapter<OnBoardAdapter.OnBoardViewHolder>() {
+class OnBoardAdapter(private val onClick:() -> Unit): Adapter<OnBoardAdapter.OnBoardViewHolder>() {
 
 
     private val data = arrayListOf(

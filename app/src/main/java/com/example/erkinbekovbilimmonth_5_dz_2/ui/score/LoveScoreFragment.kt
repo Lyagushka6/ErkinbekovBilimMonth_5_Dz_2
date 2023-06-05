@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.erkinbekovbilimmonth_5_dz_2.R
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.FragmentLoveScoreBinding
 import com.example.erkinbekovbilimmonth_5_dz_2.ui.calculator.LoveCalculatorFragment
 
@@ -22,8 +23,9 @@ class LoveScoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btnTryAgain()
+        navigate()
         loveScore()
+
     }
 
     private fun loveScore() {
@@ -40,10 +42,13 @@ class LoveScoreFragment : Fragment() {
         }
     }
 
-    private fun btnTryAgain() {
+    private fun navigate() {
         binding.apply {
             btnTryAgain.setOnClickListener{
                 findNavController().navigateUp()
+            }
+            btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
             }
         }
     }

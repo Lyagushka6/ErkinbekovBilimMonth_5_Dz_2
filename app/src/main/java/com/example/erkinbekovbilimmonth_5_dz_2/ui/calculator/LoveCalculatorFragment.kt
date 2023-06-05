@@ -1,5 +1,6 @@
 package com.example.erkinbekovbilimmonth_5_dz_2.ui.calculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.example.erkinbekovbilimmonth_5_dz_2.App
 import com.example.erkinbekovbilimmonth_5_dz_2.R
 import com.example.erkinbekovbilimmonth_5_dz_2.data.local.Pref
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.FragmentLoveCalculatorBinding
-import com.example.erkinbekovbilimmonth_5_dz_2.model.LoveModel
 import com.example.erkinbekovbilimmonth_5_dz_2.viewModel.LoveViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -38,8 +39,18 @@ class LoveCalculatorFragment  : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         onBoardSection()
         initListener()
+        navigate()
     }
 
+    private fun navigate() {
+        binding.apply {
+            btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
+            }
+        }
+    }
+
+    @SuppressLint("SuspiciousIndentation")
     private fun onBoardSection() {
         if (!pref.isUserSeen())
         findNavController().navigate(R.id.onBoardFragment)
@@ -49,15 +60,16 @@ class LoveCalculatorFragment  : Fragment() {
         binding.apply {
             btnCalculate.setOnClickListener {
                 viewModel.liveLove(firstNameEd.text.toString(), secondNameEd.text.toString())
-                    .observe(viewLifecycleOwner,Observer {LoveModel ->
+                    .observe(viewLifecycleOwner,Observer {
                         findNavController().navigate(
                             R.id.loveScoreFragment,
                             bundleOf(
-                                KEY_FOR_FNAME to LoveModel.firstName,
-                                KEY_FOR_SNAME to LoveModel.secondName,
-                                KEY_FOR_PERCE to LoveModel.percentage,
+                                KEY_FOR_FNAME to it.firstName,
+                                KEY_FOR_SNAME to it.secondName,
+                                KEY_FOR_PERCE to it.percentage,
                             )
                         )
+                        App.appDatabase.getDao().insert(it)
                     })
                 firstNameEd.text?.clear()
                 secondNameEd.text?.clear()

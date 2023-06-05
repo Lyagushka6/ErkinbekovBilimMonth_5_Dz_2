@@ -20,5 +20,10 @@
         android:name="com.example.erkinbekovbilimmonth_5_dz_2.ui.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.erkinbekovbilimmonth_5_dz_2.ui.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 
 </navigation>

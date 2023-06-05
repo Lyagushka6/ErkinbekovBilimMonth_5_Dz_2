@@ -16,4 +16,6 @@
     <string name="desc">desc</string>
     <string name="info">info</string>
     <string name="who">who</string>
+    <string name="home">home</string>
+    <string name="history">History</string>
 </resources>
