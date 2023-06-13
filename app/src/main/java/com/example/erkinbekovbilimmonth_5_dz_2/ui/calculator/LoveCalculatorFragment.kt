@@ -16,9 +16,11 @@ import com.example.erkinbekovbilimmonth_5_dz_2.data.local.Pref
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.FragmentLoveCalculatorBinding
 import com.example.erkinbekovbilimmonth_5_dz_2.viewModel.LoveViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 import javax.inject.Inject
 
 @AndroidEntryPoint
+@WithFragmentBindings
 class LoveCalculatorFragment  : Fragment() {
 
     private lateinit var binding: FragmentLoveCalculatorBinding

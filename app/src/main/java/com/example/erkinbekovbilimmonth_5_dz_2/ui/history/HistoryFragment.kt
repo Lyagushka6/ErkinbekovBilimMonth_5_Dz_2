@@ -12,8 +12,10 @@ import com.example.erkinbekovbilimmonth_5_dz_2.data.local.AppDatabase
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.FragmentHistoryBinding
 import com.example.erkinbekovbilimmonth_5_dz_2.ui.history.adapter.HistoryAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 
 @AndroidEntryPoint
+@WithFragmentBindings
 class HistoryFragment : Fragment() {
 
     private val db = App.appDatabase

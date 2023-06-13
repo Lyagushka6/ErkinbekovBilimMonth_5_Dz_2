@@ -11,10 +11,12 @@ import com.example.erkinbekovbilimmonth_5_dz_2.R
 import com.example.erkinbekovbilimmonth_5_dz_2.data.local.Pref
 import com.example.erkinbekovbilimmonth_5_dz_2.databinding.FragmentOnBoardBinding
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
+@WithFragmentBindings
 class OnBoardFragment: Fragment() {
 
     lateinit var binding: FragmentOnBoardBinding
